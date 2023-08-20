@@ -1,5 +1,5 @@
-name: "OpenVPN-Connect"
-description: "connect to OpenVPN server"
+name: "OpenVPN-Connect-Windows"
+description: "connect to OpenVPN server on windows runner"
 branding:
   icon: "lock"
   color: "green"

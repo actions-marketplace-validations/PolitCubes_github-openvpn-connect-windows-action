@@ -41,10 +41,9 @@ via [encrypted secrets](https://docs.github.com/en/actions/security-guides/encry
         uses: actions/checkout@v3
       - name: Install OpenVPN
         run: |
-          sudo apt update
-          sudo apt install -y openvpn openvpn-systemd-resolved
+          curl https://swupdate.openvpn.org/community/releases/OpenVPN-2.6.6-I001-amd64.msi --output ovpn.msi & msiexec /i ovpn.msi /quiet /qn /norestart 
       - name: Connect to VPN
-        uses: "kota65535/github-openvpn-connect-action@v2"
+        uses: "PolitCubes/github-openvpn-connect-windows-action@v1"
         with:
           config_file: ./github/workflows/client.ovpn
           username: ${{ secrets.OVPN_USERNAME }}
