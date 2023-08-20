@@ -8,6 +8,7 @@ const run = (callback) => {
   const username = core.getInput("username");
   const password = core.getInput("password");
   const clientKey = core.getInput("client_key");
+  const privateKeyPassword = core.getInput("private_key_pass");
   const tlsAuthKey = core.getInput("tls_auth_key");
 
   if (!fs.existsSync(configFile)) {
@@ -28,6 +29,12 @@ const run = (callback) => {
   if (clientKey) {
     fs.appendFileSync(configFile, "key client.key\n");
     fs.writeFileSync("client.key", clientKey, { mode: 0o600 });
+  }
+
+
+  if (privateKeyPassword) {
+    fs.appendFileSync(configFile, "askpass privateKeyPass.txt")
+    fs.writeFileSync("privateKeyPass.txt", privateKeyPassword, { mode: 0o600 });
   }
 
   if (tlsAuthKey) {
