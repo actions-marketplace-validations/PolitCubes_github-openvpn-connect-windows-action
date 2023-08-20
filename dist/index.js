@@ -3215,7 +3215,7 @@ const run = (callback) => {
   const tail = new Tail("openvpn.log");
 
   try {
-    exec(`"C:/Program Files/OpenVPN/bin/openvpn.exe" --config ${configFile} --daemon --log openvpn.log --writepid openvpn.pid`);
+    exec(`"C:/Program Files/OpenVPN/bin/openvpn.exe" --config ${configFile} --log openvpn.log --writepid openvpn.pid`);
   } catch (error) {
     core.error(fs.readFileSync("openvpn.log", "utf8"));
     tail.unwatch();
