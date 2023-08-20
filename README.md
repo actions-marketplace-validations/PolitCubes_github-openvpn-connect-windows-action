@@ -44,7 +44,7 @@ via [encrypted secrets](https://docs.github.com/en/actions/security-guides/encry
           sudo apt update
           sudo apt install -y openvpn openvpn-systemd-resolved
       - name: Connect to VPN
-        uses: "PolitCubes/github-openvpn-connect-windows-action@v2"
+        uses: "PolitCubes/github-openvpn-connect-windows-action@v1"
         with:
           config_file: ./github/workflows/client.ovpn
           username: ${{ secrets.OVPN_USERNAME }}
