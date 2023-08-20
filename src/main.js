@@ -53,7 +53,7 @@ const run = (callback) => {
   const tail = new Tail("openvpn.log");
 
   try {
-    exec(`"C:/Program Files/OpenVPN/bin/openvpn.exe" --config ${configFile}`);
+    exec(`"C:/Program Files/OpenVPN/bin/openvpn.exe" --config ${configFile} --writepid openvpn.pid --allow-nonadmin`);
   } catch (error) {
     core.error(fs.readFileSync("openvpn.log", "utf8"));
     tail.unwatch();
