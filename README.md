@@ -49,7 +49,9 @@ via [encrypted secrets](https://docs.github.com/en/actions/security-guides/encry
           username: ${{ secrets.OVPN_USERNAME }}
           password: ${{ secrets.OVPN_PASSWORD }}
           client_key: ${{ secrets.OVPN_CLIENT_KEY }}
+          private_key_pass: ${{ secrets.OVPN_PRIVATE_KEY_PASS }}
           tls_auth_key: ${{ secrets.OVPN_TLS_AUTH_KEY }}
+          
       - name: Build something
         run: ./gradlew clean build
       # The openvpn process is automatically terminated in post-action phase

@@ -19,7 +19,7 @@ inputs:
   client_key:
     description: "Local peer's private key"
     required: false
-  privateKeyPassword:
+  private_key_pass:
     description: "Private key password"
     required: false
 runs:
